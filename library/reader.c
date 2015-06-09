@@ -15,8 +15,7 @@ void insert_reader_information(preader reader){
     gets(reader->name);
     printf("请输入读者所在学院:");
     gets(reader->department);
-    printf("请输入读者所借图书名称:");
-    gets(reader->bookname);
+    memset(reader->bookname,0,sizeof(reader->bookname));//字符串置0
 }
 
 void insert_reader(){
