@@ -12,9 +12,9 @@ int find_reader(long ID,preader *prev,preader *cur){
 
 void insert_reader_information(preader reader){
     printf("请输入读者姓名:");
-    gets(reader->name);
+    scanf(" %s",reader->name);
     printf("请输入读者所在学院:");
-    gets(reader->department);
+    scanf(" %s",reader->department);
     memset(reader->bookname,0,sizeof(reader->bookname));//字符串置0
 }
 
@@ -44,6 +44,7 @@ void insert_reader(){
     }else{
         prev->next=new_reader;
     }
+    printf("录入成功!\n\n");
 }
 
 void modify_reader(){
@@ -54,6 +55,7 @@ void modify_reader(){
     scanf("%ld",&ID);
     if (find_reader(ID,&nullp,&reader)==1) {
         insert_reader_information(reader);
+        printf("修改成功!\n\n");
     }else{
         printf("该读者编号不存在!\n\n");
     }

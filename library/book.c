@@ -12,25 +12,24 @@ int find_book(int number,pbook *prev,pbook *cur){
 }
 
 void insert_book_information(pbook book){
-    getchar();
     printf("请输入图书名称:");
-    gets(book->name);
+    scanf(" %s",book->name);
     printf("请输入图书数量:");
     scanf("%d",&book->number);
     printf("请输入图书价格:");
     scanf("%f",&book->price);
     printf("请输入图书种类:");
-    gets(book->group);
+    scanf(" %s",book->group);
     printf("请输入图书出版日期:");
-    gets(book->date);
+    scanf(" %s",book->date);
     printf("请输入图书作者:");
-    gets(book->author);
+    scanf(" %s",book->author);
     printf("请输入图书出版社:");
-    gets(book->print);
+    scanf(" %s",book->print);
 }
 
 void print_book_information(pbook book){
-    printf("图书名称:%s\n图书编号:%d\n图书数量:%d\n图书价格:%f\n图书种类:%s\n图书出版日期:%s\n图书作者:%s\n图书出版社:%s\n\n",book->name,book->serialNum,book->number,book->price,book->group,book->date,book->author,book->print);
+    printf("\n图书名称:%s\n图书编号:%d\n图书数量:%d\n图书价格:%f\n图书种类:%s\n图书出版日期:%s\n图书作者:%s\n图书出版社:%s\n\n",book->name,book->serialNum,book->number,book->price,book->group,book->date,book->author,book->print);
 }
 
 void insert_book(){
@@ -58,6 +57,7 @@ void insert_book(){
     }else{
         prev->next=new_book;
     }
+    printf("录入成功!\n\n");
 }
 
 void modify_book(){
@@ -68,6 +68,7 @@ void modify_book(){
     scanf("%d",&number);
     if (find_book(number,&nullp,&book)==1) {
         insert_book_information(book);
+        printf("修改成功!\n\n");
     }else{
         printf("该图书编号不存在!\n\n");
     }
@@ -98,7 +99,7 @@ void search_book(){
     int code;//操作代码
     int i=0;//记录设备是否存在，不存在为0
 
-    printf("输入1按图书名称查询\n输入2按图书编号查询\n输入3按图书作者查询\n输入4按图书出版社查询\n");
+    printf("输入1按图书名称查询\n输入2按图书编号查询\n输入3按图书作者查询\n输入4按图书出版社查询\n请输入:");
     scanf(" %d",&code);
     printf("请输入你想查询的信息:");
     scanf(" %s",information);
@@ -137,7 +138,7 @@ void search_book(){
         return;
     }
     if (i==0) {
-        printf("设备不存在!\n\n");
+        printf("该图书不存在!\n\n");
     }
 }
 
