@@ -14,12 +14,12 @@ typedef struct reader{
     struct reader *next;
 }reader,*preader;
 
-extern preader readers;
+extern preader readers;//读者链表的头指针
 
-int find_reader(long ID,preader *prev,preader *cur);
-void insert_reader_information(preader reader);
-void insert_reader();
-void modify_reader();
-void delete_reader();
-void borrow_book();
+int find_reader(long ID,preader *prev,preader *cur);//定位读者
+void insert_reader_information(preader reader);//录入读者信息
+void insert_reader();//录入读者
+void modify_reader();//修改读者
+void delete_reader();//删除读者
+void borrow_book();//借书
 #endif

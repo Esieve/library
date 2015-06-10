@@ -19,7 +19,7 @@ void insert_reader_information(preader reader){
 }
 
 void insert_reader(){
-    preader cur,prev,new_reader;
+    preader cur,prev,new_reader;// ； ；新节点
     new_reader=malloc(sizeof(reader));
     if (new_reader==NULL) {
         printf("数据库已满，不能分配更多空间!\n\n");
@@ -49,11 +49,11 @@ void insert_reader(){
 
 void modify_reader(){
     preader reader;//要修改的读者信息
-    preader nullp;//仅作为参数传入，不需要其具体返回值
+    preader null_p;//仅作为参数传入，不需要其具体返回值
     long ID;//要修改的读者编号
     printf("请输入你想修改的读者编号:");
     scanf("%ld",&ID);
-    if (find_reader(ID,&nullp,&reader)==1) {
+    if (find_reader(ID,&null_p,&reader)==1) {
         insert_reader_information(reader);
         printf("修改成功!\n\n");
     }else{
@@ -82,17 +82,17 @@ void delete_reader(){
 }
 
 void borrow_book(){
-    long ID;
-    int serialNum;
-    preader null_p1,reader;
-    pbook null_p2,book;
+    long ID;//读者编号
+    int serialNum;//图书编号
+    preader null_p1,reader;//无用指针
+    pbook null_p2,book;//无用指针
     printf("请输入你的读者编号:");
     scanf("%ld",&ID);
     if (find_reader(ID,&null_p1,&reader)==1&&strlen(reader->bookname)==0) {
         printf("请输入你想借的图书编号:");
         scanf("%d",&serialNum);
         if (find_book(serialNum,&null_p2,&book)==1&&book->number>0) {
-            book->number--;
+            book->number--;//图书数量减一
             strcpy(reader->bookname,book->name);
             printf("借阅成功!\n\n");
         }else if (find_book(serialNum,&null_p2,&book)==0){

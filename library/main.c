@@ -7,14 +7,14 @@ pbook library=NULL;
 preader readers=NULL;
 
 int main() {
-    char code;
+    char code;//保存操作代码
     printf("欢迎使用！\n\n输入字母I或i录入图书或读者信息\n输入字母M或m修改图书或读者信息\n输入字母D或d删除图书或读者信息\n输入字母S或s查询图书信息\n输入字母B或b办理借书\n输入字母F或f查询某图书的借阅人信息\n输入字母Q或者q退出程序\n\n");
     for (;;) {
         printf("请输入操作代码:");
         scanf(" %c",&code);
         switch (code) {
             case 'I':case 'i':
-                printf("输入字母B或b录入图书信息\n输入字母R或r录入读者信息\n\n");
+                printf("\n输入字母B或b录入图书信息\n输入字母R或r录入读者信息\n\n");
                 printf("请输入操作代码:");
                 scanf(" %c",&code);
                 
@@ -31,7 +31,7 @@ int main() {
                 }
                 break;
             case 'M':case 'm':
-                printf("输入字母B或b修改图书信息\n输入字母R或r修改读者信息\n\n");
+                printf("\n输入字母B或b修改图书信息\n输入字母R或r修改读者信息\n\n");
                 printf("请输入操作代码:");
                 scanf(" %c",&code);
                 
@@ -48,7 +48,7 @@ int main() {
                 }
                 break;
             case 'D':case 'd':
-                printf("输入字母B或b删除图书信息\n输入字母R或r删除读者信息\n\n");
+                printf("\n输入字母B或b删除图书信息\n输入字母R或r删除读者信息\n\n");
                 printf("请输入操作代码:");
                 scanf(" %c",&code);
                 
