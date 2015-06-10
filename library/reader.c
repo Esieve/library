@@ -106,3 +106,28 @@ void borrow_book(){
         printf("每名读者只能借一本书!\n\n");
     }   
 }
+
+void return_book(){
+    long ID;//读者编号
+    int serialNum;//图书编号
+    preader null_p1,reader;//无用指针
+    pbook null_p2,book;//无用指针
+    printf("请输入你的读者编号:");
+    scanf("%ld",&ID);
+    if (find_reader(ID,&null_p1,&reader)==1&&strlen(reader->bookname)!=0) {
+        printf("请输入你想借的图书编号:");
+        scanf("%d",&serialNum);
+        if (find_book(serialNum,&null_p2,&book)==1) {
+            book->number++;//图书数量加一
+            memset(reader->bookname,0,sizeof(reader->bookname));//字符串置0
+            printf("归还成功!\n\n");
+            
+        }else if (find_book(serialNum,&null_p2,&book)==0){
+            printf("该图书编号不存在!\n\n");
+        }
+    }else if (find_reader(ID,&null_p1,&reader)==0){
+        printf("该读者编号不存在!\n\n");
+    }else if (strlen(reader->bookname)==0){
+        printf("该读者未借书!\n\n");
+    }    
+}

@@ -8,7 +8,7 @@ preader readers=NULL;
 
 int main() {
     char code;//保存操作代码
-    printf("欢迎使用！\n\n输入字母I或i录入图书或读者信息\n输入字母M或m修改图书或读者信息\n输入字母D或d删除图书或读者信息\n输入字母S或s查询图书信息\n输入字母B或b办理借书\n输入字母F或f查询某图书的借阅人信息\n输入字母Q或者q退出程序\n\n");
+    printf("欢迎使用！\n\n输入字母I或i录入图书或读者信息\n输入字母M或m修改图书或读者信息\n输入字母D或d删除图书或读者信息\n输入字母S或s查询图书信息\n输入字母B或b办理借书\n输入字母R或r办理还书\n输入字母F或f查询某图书的借阅人信息\n输入字母Q或者q退出程序\n\n");
     for (;;) {
         printf("请输入操作代码:");
         scanf(" %c",&code);
@@ -69,6 +69,9 @@ int main() {
                 break;
             case 'B':case 'b':
                 borrow_book();
+                break;
+            case 'R':case 'r':
+                return_book();
                 break;
             case 'F':case 'f':
                 find_bookborrower();

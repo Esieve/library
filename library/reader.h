@@ -22,4 +22,5 @@ void insert_reader();//录入读者
 void modify_reader();//修改读者
 void delete_reader();//删除读者
 void borrow_book();//借书
+void return_book();//还书
 #endif
